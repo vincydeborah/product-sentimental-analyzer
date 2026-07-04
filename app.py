@@ -1,5 +1,6 @@
 from flask import Flask, jsonify, request
 from collections import Counter
+import os
 import re
 from pymongo import MongoClient
 from flask_cors import CORS
@@ -8,7 +9,7 @@ app = Flask(__name__)
 CORS(app)
 
 # Connect to MongoDB
-client = MongoClient("mongodb://localhost:27017/")
+client = MongoClient(os.environ.get("MONGODB_URI"))
 db = client["product_sentiment_db"]
 collection = db["reviews"]
 
