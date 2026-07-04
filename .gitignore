@@ -1,0 +1,8 @@
+node_modules/
+product-dashboard/node_modules/
+__pycache__/
+*.py[cod]
+.env
+.DS_Store
+build/
+coverage/
